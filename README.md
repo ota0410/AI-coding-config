@@ -77,22 +77,3 @@ Windows上で実体のあるシンボリックリンクを作成できない場�
 
 - テスト・静的解析・ビルドの実行方法：未記入
 ```
-
-## GitHubへの初回登録
-
-GitHubでファイルを追加しない空のリポジトリを作成し、WSLなどのターミナルで `ai-config` ディレクトリに移動して実行します。`YOUR_NAME` と `YOUR_REPOSITORY` は自分の値に置き換えてください。
-
-```bash
-git init -b main
-git add AGENTS.md CLAUDE.md README.md TASKLIST.md .gitignore .gitattributes
-git diff --cached --stat
-git ls-files --stage CLAUDE.md
-git commit -m "Add shared engineering principles"
-git remote add origin https://github.com/YOUR_NAME/YOUR_REPOSITORY.git
-git push -u origin main
-```
-
-`git ls-files --stage CLAUDE.md` の先頭が `120000` であることを確認すると、Gitがシンボリックリンクとして扱っていることを確認できます。コミットにはGitのユーザー名・メールアドレスの設定、pushにはGitHubへの認証が必要です。
-
-この一式を作成した時点では、Gitの初期化・コミット・GitHubへのpushは実行していません。
-# AI-coding-config
